@@ -1,0 +1,28 @@
+<h1>Register for users</h1>
+
+<div *ngIf="alert" class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Success!</strong> You have successfully registered
+    <button (click)="closeAlert()" type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div> 
+
+  <form [formGroup]="register" (ngSubmit)="collection()">
+      <div class="form-group">
+        <label>Name</label>
+        <input type="text" class="form-control" placeholder="input name.." formControlName="name">
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input type="email" class="form-control" placeholder="input email.." formControlName="email">
+      </div>
+
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control" placeholder="input password.." formControlName="password">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+
+  </form>
